@@ -7,6 +7,7 @@ import javax.annotation.Resource;
 import cn.biye.core.bean.product.Feature;
 import cn.biye.core.dao.product.FeatureDao;
 import cn.biye.core.query.product.FeatureQuery;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -21,7 +22,7 @@ import cn.itcast.common.page.Pagination;
 @Transactional
 public class FeatureServiceImpl implements FeatureService {
 
-	@Resource
+	@Autowired
 	private FeatureDao featureDao;
 
 	/**
@@ -78,7 +79,7 @@ public class FeatureServiceImpl implements FeatureService {
 	@Transactional(readOnly = true)
 	public List<Feature> getFeatureList(FeatureQuery featureQuery) {
 
-		System.out.println(featureQuery.toString());
+		System.out.println("----"+featureQuery.toString());
 		return featureDao.getFeatureList(featureQuery);
 
 	}

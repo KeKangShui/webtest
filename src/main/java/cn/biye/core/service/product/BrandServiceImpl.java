@@ -70,7 +70,7 @@ public class BrandServiceImpl implements BrandService{
 	@Override
 	public List<Brand> getBrandList(BrandQuery brandQuery) {
 		// TODO Auto-generated method stub
-		System.out.println(brandQuery.toString());
+		System.out.println("-----:"+brandQuery.toString());
 		return brandMapper.getBrandList(brandQuery);
 	}
 }

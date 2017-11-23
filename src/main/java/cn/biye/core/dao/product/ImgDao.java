@@ -14,31 +14,31 @@ public interface ImgDao {
 
 	/**
 	 * 根据主键查找
-	 * @param imgQuery
+	 * @param
 	 */
 	public Img getImgByKey(Integer id);
 
 	/**
 	 * 根据主键批量查找
-	 * @param imgQuery
+	 * @param
 	 */
 	public List<Img> getImgsByKeys(List<Integer> idList);
 
 	/**
 	 * 根据主键删除
-	 * @param imgQuery
+	 * @param
 	 */
 	public Integer deleteByKey(Integer id);
 
 	/**
 	 * 根据主键批量删除
-	 * @param imgQuery
+	 * @param
 	 */
 	public Integer deleteByKeys(List<Integer> idList);
 
 	/**
 	 * 根据主键更新
-	 * @param imgQuery
+	 * @param
 	 */
 	public Integer updateImgByKey(Img img);
 

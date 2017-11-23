@@ -19,7 +19,7 @@
         mapper文件就是xml文件-->
         <!--自动扫描mapper.xml文件-->
 
-       <!-- <property name="mapperLocations">
+        <property name="mapperLocations">
             <array>
                 <value>classpath:mapper/country/*.xml</value>
                 <value>classpath:mapper/order/*.xml</value>
@@ -27,10 +27,10 @@
                 <value>classpath:mapper/user/*.xml</value>
                 <value>classpath:mapper/BrandDao.xml</value>
             </array>
-        </property>-->
+        </property>
         <!--这个可以实现上面一样的功能-->
-        <property name="mapperLocations" value="classpath*:mapper/**/*.xml"/>
-        <!--这个query 一定研究一下  用处好大啊！！-->
+        <!--  <property name="mapperLocations" value="classpath*:mapper/**/*.xml"/>-->
+          <!--这个query 一定研究一下  用处好大啊！！-->
         <property name="typeAliasesPackage" value="cn.biye.core.bean,cn.biye.core.query"/>
     </bean>
 
@@ -39,7 +39,8 @@
     <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
         <!--下面这个value可以有两种写法：1，精确到各个包下面，多个包用逗号隔开。
             2，不精确到每个包下面，就只写到各个包上面的包中，例如dao包下面还有包，则写到dao就行了-->
-        <property name="basePackage" value="cn.biye.core.dao"/>
+        <property name="basePackage" value="cn.biye.core.dao.user,
+        cn.biye.core.dao.product,cn.biye.core.dao.order,cn.biye.core.dao.country"/>
         <property name="sqlSessionFactoryBeanName" value="sqlSessionFactory"/>
     </bean>
 

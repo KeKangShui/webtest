@@ -20,25 +20,25 @@ public interface FeatureDao {
 
 	/**
 	 * 根据主键批量查找
-	 * @param featureQuery
+	 * @param
 	 */
 	public List<Feature> getFeaturesByKeys(List<Integer> idList);
 
 	/**
 	 * 根据主键删除
-	 * @param featureQuery
+	 * @param
 	 */
 	public Integer deleteByKey(Integer id);
 
 	/**
 	 * 根据主键批量删除
-	 * @param featureQuery
+	 * @param
 	 */
 	public Integer deleteByKeys(List<Integer> idList);
 
 	/**
 	 * 根据主键更新
-	 * @param featureQuery
+	 * @param
 	 */
 	public Integer updateFeatureByKey(Feature feature);
 
