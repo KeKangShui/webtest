@@ -1,13 +1,7 @@
 package cn.biye.core.controller.admin;
 
-import cn.biye.core.bean.product.Brand;
-import cn.biye.core.bean.product.Feature;
-import cn.biye.core.bean.product.Product;
-import cn.biye.core.bean.product.Type;
-import cn.biye.core.query.product.BrandQuery;
-import cn.biye.core.query.product.FeatureQuery;
-import cn.biye.core.query.product.ProductQuery;
-import cn.biye.core.query.product.TypeQuery;
+import cn.biye.core.bean.product.*;
+import cn.biye.core.query.product.*;
 import cn.biye.core.service.product.*;
 import cn.itcast.common.page.Pagination;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -124,4 +118,20 @@ public class FrontProductController {
         return "product/product";
 
     }
+
+    @RequestMapping(value = "/product/detail.shtml")
+    public String detail(Integer id,ModelMap model){
+        //商品加载
+        Product product = productService.getProductByKey(id);
+        model.addAttribute("product",product);
+
+        //skus
+        SkuQuery skuQuery = new SkuQuery();
+        skuQuery.setProductId(id);
+        List<Sku> skus = skuService.getSkuList(skuQuery);
+        model.addAttribute("skus",skus);
+
+        return "product/productDetail";
+    }
+
 }

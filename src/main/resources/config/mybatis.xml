@@ -39,8 +39,7 @@
     <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
         <!--下面这个value可以有两种写法：1，精确到各个包下面，多个包用逗号隔开。
             2，不精确到每个包下面，就只写到各个包上面的包中，例如dao包下面还有包，则写到dao就行了-->
-        <property name="basePackage" value="cn.biye.core.dao.user,
-        cn.biye.core.dao.product,cn.biye.core.dao.order,cn.biye.core.dao.country"/>
+        <property name="basePackage" value="cn.biye.core.dao"/>
         <property name="sqlSessionFactoryBeanName" value="sqlSessionFactory"/>
     </bean>
 
