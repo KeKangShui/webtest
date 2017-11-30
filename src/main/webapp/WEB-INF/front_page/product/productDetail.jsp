@@ -142,7 +142,7 @@ function buy(){
 <div class="w ofc mt">
 	<div class="l">
 		<div class="showPro">
-			<div class="big"><a id="showImg" class="cloud-zoom" href="/res/img/pic/ppp0.jpg" rel="adjustX:10,adjustY:-1"><img alt="" src="/res/img/pic/ppp0.jpg"></a></div>
+			<div class="big"><a id="showImg" class="cloud-zoom" href="${product.img.allUrl }" rel="adjustX:10,adjustY:-1"><img alt="" src="${product.img.allUrl }"></a></div>
 		</div>
 	</div>
 	<div class="r" style="width: 640px">
@@ -155,9 +155,8 @@ function buy(){
 			<li><label>选择颜色：</label>
 			<%--颜色  --%>
 				<div id="colors" class="pre spec">
-					<c:forEach items="${skus}" var="sku">
-							<%--	<a onclick="colorToRed(this,18)" href="javascript:void(0)" title="浅粉" class="changToWhite"><img width="25" height="25" data-img="1" src="/res/img/pic/ppp00.jpg" alt="浅粉 "><i>${sku.name}</i></a>
-                           --%>
+					<c:forEach items="${colors}" var="color">
+								<a onclick="colorToRed(this,${color.id})" href="javascript:void(0)" title="${color.name}" class="changToWhite"><img width="25" height="25" data-img="1" src="/res/img/pic/ppp00.jpg" alt="${color.name} "><i>${color.name}</i></a>
 					</c:forEach>
                         </div>
 			</li>

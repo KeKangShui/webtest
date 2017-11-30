@@ -9,6 +9,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import java.util.ArrayList;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
@@ -130,6 +131,16 @@ public class FrontProductController {
         skuQuery.setProductId(id);
         List<Sku> skus = skuService.getSkuList(skuQuery);
         model.addAttribute("skus",skus);
+        //去重复
+        List<Color> colors = new ArrayList<Color>();
+        for (Sku sku :skus){
+            if(!colors.contains(sku.getColor())){
+                colors.add(sku.getColor());
+            }
+        }
+
+
+        model.addAttribute("colors",colors);
 
         return "product/productDetail";
     }

@@ -45,4 +45,29 @@ public class Color implements Serializable {
 	public String toString() {
 		return "Color [id=" + id + ",name=" + name + ",parentId=" + parentId + ",imgUrl=" + imgUrl + "]";
 	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)  //地址
+			return true;
+		if (obj == null)  //不能null
+			return false;
+		if (getClass() != obj.getClass()) //cn.itcast.core.bean.color
+			return false;
+		Color other = (Color) obj;
+		if (id == null) {
+			if (other.id != null)
+				return false;
+		} else if (!id.equals(other.id))
+			return false;
+		return true;
+	}
+	@Override
+	public int hashCode() {
+		int result = id != null ? id.hashCode() : 0;
+		result = 31 * result + (name != null ? name.hashCode() : 0);
+		result = 31 * result + (parentId != null ? parentId.hashCode() : 0);
+		result = 31 * result + (imgUrl != null ? imgUrl.hashCode() : 0);
+		return result;
+	}
 }

@@ -291,12 +291,14 @@
       <version>1.0</version>
       <scope>compile</scope>
     </dependency>
+
     <dependency>
       <groupId>cn.itcast</groupId>
       <artifactId>page</artifactId>
       <version>1.0</version>
       <scope>compile</scope>
     </dependency>
+
     <dependency>
       <groupId>junit</groupId>
       <artifactId>junit</artifactId>

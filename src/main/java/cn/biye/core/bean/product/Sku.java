@@ -36,6 +36,10 @@ public class Sku implements Serializable {
 	private Integer skuType;
 	private Integer sales;
 
+	//添加颜色对象
+	private Color color;
+
+
 	public Color getColor() {
 		return color;
 	}
@@ -43,9 +47,6 @@ public class Sku implements Serializable {
 	public void setColor(Color color) {
 		this.color = color;
 	}
-
-	//添加颜色对象
-	private Color color;
 
 	public Integer getId() {
 		return id;
